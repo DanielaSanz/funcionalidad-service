@@ -4,9 +4,10 @@
 
 <mapper namespace="com.service.functionality.mapper.PeopleMapper">
 
-    <select id="descriptionPeople">
+    <select id="descriptionPeople" resultType="com.service.functionality.service.http.PeopleResponse">
         SELECT P.DESCRIPTION
         FROM PEOPLE P
+        WHERE P.ID = 1
 	</select>
 
 </mapper>

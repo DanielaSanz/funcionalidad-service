@@ -35,7 +35,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .pathMapping("/")
                 .select()
-                .paths(PathSelectors.regex("/proof.*"))
+                .paths(PathSelectors.regex("/functionality.*"))
                 .build();
     }
 
