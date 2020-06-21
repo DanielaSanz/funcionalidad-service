@@ -1,5 +1,8 @@
 package com.service.functionality.service.http;
 
+import java.util.List;
+
+import com.service.functionality.model.People;
 import lombok.*;
 
 @Getter
@@ -9,10 +12,6 @@ import lombok.*;
 @NoArgsConstructor
 public class PeopleResponse {
 
-    private String description;
-    private String errorMessage;
+    private List<People> nameList;
 
-    public PeopleResponse(String description) {
-        this.description = description;
-    }
 }
