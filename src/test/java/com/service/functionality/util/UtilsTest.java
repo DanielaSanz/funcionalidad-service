@@ -34,7 +34,7 @@ class UtilsTest {
 
         ResponseEntity<PeopleResponse> responseEntity = sut.separateFullName(request);
 
-        assertThat(responseEntity.getBody().getNameList().get(0), is("Daniela"));
+        assertThat(responseEntity.getBody().getNameList().get(0).getName(), is("Daniela"));
     }
 
 }
