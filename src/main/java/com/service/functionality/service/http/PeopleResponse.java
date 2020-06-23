@@ -13,5 +13,15 @@ import lombok.*;
 public class PeopleResponse {
 
     private List<People> nameList;
+    private List<People> surnameList;
+    private String errorMessage;
 
+    public PeopleResponse(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public PeopleResponse(List<People> nameList, List<People> surnameList) {
+        this.nameList = nameList;
+        this.surnameList = surnameList;
+    }
 }

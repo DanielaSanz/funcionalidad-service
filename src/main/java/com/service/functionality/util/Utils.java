@@ -12,15 +12,21 @@ import java.util.*;
 public class Utils {
 
     public ResponseEntity<PeopleResponse> separateFullName(PeopleRequest request) {
-        People p1 = new People();
         List<People> nameList = new ArrayList<>();
+        List<People> surnameList = new ArrayList<>();
 
-        String string = request.getFullNameList().get(0);
-        String[] parts = string.split(",");
-        String part1 = parts[0];
-        p1.setName(part1);
-        nameList.add(p1);
+        for (int i = 0; i <request.getFullNameList().size() ; i++) {
+            People p = new People();
+            String string = request.getFullNameList().get(i);
+            String[] parts = string.split(",");
+            String part1 = parts[0];
+            String part2 = parts[1];
+            p.setName(part1);
+            p.setSurname(part2);
+            nameList.add(p);
+            surnameList.add(p);
+        }
 
-        return ResponseEntity.ok(new PeopleResponse(nameList));
+        return ResponseEntity.ok(new PeopleResponse(nameList, surnameList));
     }
 }

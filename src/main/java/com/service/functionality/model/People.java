@@ -12,8 +12,4 @@ public class People {
     private String name;
     private String surname;
 
-    public People(String name) {
-        this.name = name;
-    }
-
 }
