@@ -27,7 +27,7 @@ public class PeopleService {
     public ResponseEntity<PeopleResponse> separateFullName(PeopleRequest request) {
         try {
             validatorRequest.validatorRequest(request);
-            utils.separateFullName(request);
+            ResponseEntity<PeopleResponse> responseEntity = utils.separateFullName(request);
             LOGGER.info("Se devuelve lista de nombres y apellido por separado");
             return ResponseEntity.ok().body(new PeopleResponse());
         } catch (IllegalArgumentException iae) {
